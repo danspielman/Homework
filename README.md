@@ -21,15 +21,13 @@ And generative model can even identify data which it has never seen before.
 ### Generative Adversarial Networks
 
 The generative adversarial networks algorithm was first introduced by Ian Goodfellow et al. in 2014. 
-This algorithm implemented by two competing neural networks models. 
+This algorithm implemented by two competing neural networks models.
+
 <p align="center">
-  <img src=[f3]>
+  <img src="CodeCogsEqn.gif">
 </p>
 
-
-
 # Part 2 -- Application
-
 ### Generate MNIST dataset data
 
 D_loss_real = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(logits=D_logit_real, labels=tf.ones_like(D_logit_real)))
@@ -52,5 +50,4 @@ samples = sess.run(G_sample, feed_dict={Z: sample_Z(16, Z_dim)})
 
 [f1]:http://chart.apis.google.com/chart?cht=tx&chl=P(y|x)
 [f2]:http://chart.apis.google.com/chart?cht=tx&chl=P(x,y)
-[f3]:http://chart.apis.google.com/chart?cht=tx&chl=P(x,z)=p(z)p(x|z)
-[f4]:http://chart.apis.google.com/chart?cht=tx&chl=\underset{(s,t)\inS_{xy}}
+[f3]:http://chart.apis.google.com/chart?cht=tx&chl=\underset{(s,t)\inS_{xy}}
