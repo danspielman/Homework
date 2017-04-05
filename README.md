@@ -1,4 +1,4 @@
-# Homework
+# Project 1
 
 This is a blog on Generative Adversarial Networks (GANs)
 
