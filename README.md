@@ -126,7 +126,7 @@ Here showes some results from generator:
 
 # Conlusion
 
-Every print_steps times, I would output the first 16 samples get from generator to check its correctness by my obeservation. And I found this results are fairly unstable. Each time the number it tried to generate is totally different. However, its performance really improved quite a lot at the begining and at the end of training. You can see generated MNIST looked quite meaningful in last image. And according to the paper, the generator will not memory the training set, so this is a practical algorithm for rendering virtural images.
+Every print_steps times, I would output the first 16 samples get from generator to check its correctness by my obeservation. And I found this results are fairly unstable. Each time the number it tried to generate is totally different. However, its performance really improved quite a lot comparing that at the begining and at the end of training. You can see generated MNIST looked quite meaningful in last image. And according to the paper, the generator will not memory the training set, so this is a practical algorithm for rendering virtural images.
 
 And in the experiment, the training process will take a long time to get good performance. For gradient optimizer, it takes 998 seconds to run 50000 iterations. And the outcome is still not satisfied enough as you can see in my jupyter notebook. And if I run the process for 1 million iterations. The result is pretty good, as showed below: 
 
