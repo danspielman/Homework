@@ -131,7 +131,7 @@ Every print_steps times, I would output the first 16 samples get from generator 
 And in the experiment, the training process will take a long time to get good performance. For gradient optimizer, it takes 998 seconds to run 50000 iterations. And the outcome is still not satisfied enough as you can see in my jupyter notebook. And if I run the process for 1 million iterations. The result is pretty good, as showed below: 
 
 <p align="center">
-  <img src="098.png" height="250", width="250">
+  <img src="097.png" height="250", width="250">
 </p>
 
 # Reference
