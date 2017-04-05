@@ -12,9 +12,15 @@ The rest of this post will describe the GAN algorithm flow in a bit more detail,
 
 Before starting GANs, let’s briefly review the definition about generative and discriminative models:
 
-- Discriminative model: Discriminative models are a class of models used in machine learning for modeling the dependence of an unobserved variable y on an observed variable x. Within a probabilistic framework, this is done by modeling the conditional probability distribution ![f1] .
+- Discriminative model: Discriminative models are a class of models used in machine learning for modeling the dependence of an unobserved variable y on an observed variable x. Within a probabilistic framework, this is done by modeling the conditional probability distribution.
+<p align="center">
+  <img src="py_con_x.png" height="20">
+</p>
 
-- Generative model: In probability and statistics, a generative model is a model for randomly generating observable data values, typically given some hidden parameters. It specifies a joint probability distribution over observation and label sequences. ![f2]
+- Generative model: In probability and statistics, a generative model is a model for randomly generating observable data values, typically given some hidden parameters. It specifies a joint probability distribution over observation and label sequences. 
+<p align="center">
+  <img src="px_y.png" height="20">
+</p>
 
 And generative model can even identify data which it has never seen before.
 
@@ -24,11 +30,11 @@ The generative adversarial networks algorithm was first introduced by Ian Goodfe
 This algorithm simultaneously trains two competing neural networks models: a generative model G that captures the data distribution, and a discriminative model D that estimates the probability that a sample came from the training data rather than G. The training procedure for G is to maximize the probability of D making a mistake. This framework corresponds to a minimax two-player game. The details expression mathematically are showed below:
 
 <p align="center">
-  <img src="minmax.gif">
+  <img src="minmaxpng.png" height="40">
 </p>
 
 <p align="center">
-  <img src="value_function.gif">
+  <img src="value_function.png" height="30">
 </p>
 
 The workflow is showed below:
@@ -118,6 +124,18 @@ Here showes some results from generator:
   <img src="096.png" height="250", width="250">
 </p>
 
-[f1]:http://chart.apis.google.com/chart?cht=tx&chl=P(y|x)
-[f2]:http://chart.apis.google.com/chart?cht=tx&chl=P(x,y)
-[f3]:http://chart.apis.google.com/chart?cht=tx&chl=\underset{(s,t)\inS_{xy}}
+# Conlusion
+
+Every print_steps times, I would output the first 16 samples get from generator to check its correctness by my obeservation. And I found this results are fairly unstable. Each time the number it tried to generate is totally different. However, its performance really improved quite a lot at the begining and at the end of training. You can see generated MNIST looked quite meaningful in last image. And according to the paper, the generator will not memory the training set, so this is a practical algorithm for rendering virtural images.
+
+And in the experiment, the training process will take a long time to get good performance. For gradient optimizer, it takes 998 seconds to run 50000 iterations. And the outcome is still not satisfied enough as you can see in my jupyter notebook. And if I run the process for 1 million iterations. The result is pretty good, as showed below: 
+
+<p align="center">
+  <img src="098.png" height="250", width="250">
+</p>
+
+# Reference
+- http://blog.aylien.com/introduction-generative-adversarial-networks-code-tensorflow/
+- https://arxiv.org/abs/1701.00160
+- https://en.wikipedia.org/wiki/Generative_model
+- https://en.wikipedia.org/wiki/Discriminative_model
